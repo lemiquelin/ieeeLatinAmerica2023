@@ -1,6 +1,5 @@
-*$include C:\Users\gabriela.bregadioli\Desktop\Leticia\IMPLEMENTAÇÃO GAMS\comparação pratica Toledo\IMPLEMENTAÇÃO GAMS.24.1\dados10.gms
-$include C:\Users\lemiq\Desktop\Mestrado\IMPLEMENTAÇÃO GAMS\comparação pratica Toledo\IMPLEMENTAÇÃO GAMS.24.1\dados3.gms
-*$include G:\IMPLEMENTAÇÃO GAMS.24\dados1.gms
+$include C:\Users\lemiq\Desktop\Mestrado\IMPLEMENTAÃ‡ÃƒO GAMS\comparaÃ§Ã£o pratica Toledo\IMPLEMENTAÃ‡ÃƒO GAMS.24.1\dados1.gms
+
 
 Variables
 F;
@@ -14,16 +13,16 @@ is.fx(j,'t0')  =  270;
 
 Binary Variables
 
-*se a bomba j está acionada no periodo t
+*se a bomba j estÃ¡ acionada no periodo t
 x(j,t)
 
-*se há transferencia do reservatorio j para l no periodo t
+*se hÃ¡ transferencia do reservatorio j para l no periodo t
 z(j,l,t)
 
 *se a demanda se encontra na faixa
 y(i,k,t)
 
-*se a bomba j é acionada no período t
+*se a bomba j Ã© acionada no perÃ­odo t
 a(j,t)
 
 des(j,t);
@@ -42,7 +41,7 @@ OBJ, R1, R2, R3, R4, R19, R20, R24, R25, R26, R27;
 
 
 OBJ.. F =E= sum(t$(ord(t)>1),sum(j,c(j,t)*x(j,t)+sc(j,t)*a(j,t))) + sum(t$(ord(t)>1),sum(j,sum(l,ct(j,l,t)*z(j,l,t))));
-*custo com energia relacionados ao funcionamento e acionamento das bombas de captação e transferencia
+*custo com energia relacionados ao funcionamento e acionamento das bombas de captaÃ§Ã£o e transferencia
 
 R1(j,t)$(ord(t)>1).. is(j,t) =E= (1-p)*is(j,t-1) + v(j,t)*x(j,t) + sum(l,w(l,j,t)*z(l,j,t)) - sum(l,w(j,l,t)*z(j,l,t)) - sum(k,d(j,k,t));
 *balanceamento de estoque
@@ -95,50 +94,3 @@ MODEL agua /all/;
 OPTION MIP=CPLEX;
 SOLVE agua using MIP minimizing F;
 
-
-* imprimindo resultados
-
-*file resultados/ resultados_Leticia.gdx/;
-*resultados.pc=6;
-*resultados.nd=4;
-*put resultados;
-
-*put 'Resultados da Letícia' put '' /;
-
-*loop(i,
-*         put i.tl put y.l(i) put /;
-*);
-
-
-
-****************MODELO GABRIELA
-
-
-*imprimir resultados no excel
-
-*         nome do arquivo       nome do arquivo.excel
-
-**file res_modelo_curto_prazo/ res_modelo_curto_prazo.gdx/;
-**res_modelo_curto_prazo.pc=6;
-**res_modelo_curto_prazo.nd=4;
-**put res_modelo_curto_prazo;
-
-
-
-* quando quer fazer conta com os resultados
-
-*           nome do resultado
-
-**PARAMETER GER_T_H, GER_T_T, CUSTO, VOL_T, DEM_T;
-
-*          contas
-
-**         GER_T_H = SUM(J$(DADOS_J(J,'TIPO') eq 1), SUM(T, pg.l(j,t)));
-**         GER_T_T = SUM(J$(DADOS_J(J,'TIPO') eq 2), SUM(T, pg.l(j,t)));
-**         DEM_T = sum(I, sum (T, pd.l(i,t)));
-**         CUSTO = sum(T, sum (I, sum(M, LDb(i,m,t)*pDb.L(m,i,t)))) - SUM(T, SUM(J, SUM (N,   LGb(j,n,t)*pGb.L(n,j,t))));
-**         VOL_T = SUM(j, V.L(J,'T24'));
-
-*          imprimindo resultados
-
-**PUT GER_T_H  put '&' put GER_T_T  put '&' put DEM_T  put '&' put CUSTO  put '&' put VOL_T;
