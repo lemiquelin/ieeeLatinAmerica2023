@@ -1,4 +1,4 @@
-$include C:\Users\lemiq\Desktop\Mestrado\IMPLEMENTAÇÃO GAMS\comparação pratica Toledo\IMPLEMENTAÇÃO GAMS.24.1\dados1.gms
+$include C:\Users\lemiq\Desktop\Mestrado\IMPLEMENTAÇÃO GAMS\comparação pratica Toledo\IMPLEMENTAÇÃO GAMS.24.1\dados1SOP.gms
 
 
 Variables
