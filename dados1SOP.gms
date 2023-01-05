@@ -59,7 +59,7 @@ sc(j,t)
 3   1   1   1   1   1   1   1   1   1    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1;
 
 Table
-*vaz„o da bomba j no perÌodo t
+*vaz√£o da bomba j no per√≠odo t
 v(j,t)
    t1  t2  t3  t4  t5  t6  t7  t8  t9  t10  t11  t12  t13  t14  t15  t16  t17  t18  t19  t20  t21  t22  t23  t24
 1 300 300 300 300 300 300 300 300 300  300  300  300  300  300  300  300  300  300  300  300  300  300  300  300
@@ -67,7 +67,7 @@ v(j,t)
 3 300 300 300 300 300 300 300 300 300  300  300  300  300  300  300  300  300  300  300  300  300  300  300  300;
 
 Table
-*vaz„o da bomba j para l no perÌodo t
+*vaz√£o da bomba j para l no per√≠odo t
 w(j,l,t)
       t1  t2  t3  t4  t5  t6  t7  t8  t9  t10  t11  t12  t13  t14  t15  t16  t17  t18  t19  t20  t21  t22  t23  t24
 1.1    0   0   0   0   0   0   0   0   0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
@@ -96,7 +96,7 @@ max(j)
  3 1000/;
 
 Table
-*custo de transferencia do reservatÛrio j para l no perÌodo t
+*custo de transferencia do reservat√≥rio j para l no per√≠odo t
 ct(j,l,t)
      t1  t2  t3  t4  t5  t6  t7  t8  t9  t10  t11  t12  t13  t14  t15  t16  t17  t18  t19  t20  t21  t22  t23  t24
 1.1   0   0   0   0   0   0   0   0   0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
@@ -121,7 +121,7 @@ jose(j,t)
 3 270;
 
 Table
-*fraÁ„o de t=0 que a bomba È acionada
+*fra√ß√£o de t=0 que a bomba √© acionada
 maria(j,t)
   t0
 1  0
